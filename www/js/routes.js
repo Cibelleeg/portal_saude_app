@@ -57,6 +57,29 @@ var app = new Framework7({
           },
         }
       });
+      var swiper2 = new Swiper(".categorias", {
+        slidesPerView: 3,
+        spaceBetween: 15,
+        breakpoints: {
+          50:{
+            slidesPerView: 3,
+            spaceBetween: 30
+          },
+          640:{
+            slidesPerView: 5,
+            spaceBetween: 30
+          },
+          992:{
+            slidesPerView: 7,
+            spaceBetween: 30
+          },
+          1200:{
+            slidesPerView: 9,
+            spaceBetween: 30
+          },
+        }
+      });
+
 		},
 		pageBeforeRemove: function (event, page) {
 		// fazer algo antes da página ser removida do DOM
@@ -126,6 +149,8 @@ var app = new Framework7({
   ],
   // ... other parameters
 });
+
+
 
 //Para testes direto no navegador
 var mainView = app.views.create('.view-main', { url: '/index/' });
