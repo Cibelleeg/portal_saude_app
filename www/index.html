@@ -14,9 +14,11 @@
     <!-- Path to Framework7 Library Bundle CSS -->
     <link rel="stylesheet" href="lib/framework7-bundle.min.css">
     <!-- CSS PERSONALIZADO PARA MENU-->
-    <link rel="stylesheet" href="css/personalizado.css">
+    <link rel="stylesheet" href="css/index.css">
     <!--Ícones Material Design-->
     <link rel="stylesheet" href="css/materialdesignicons.min.css">
+    <!--Ícones remix icons-->
+    <link rel="stylesheet" href="css/remixicons/remixicon.css">
 
 
 </head>
@@ -32,16 +34,20 @@
             <div class="toolbar toolbar-bottom">
                 <div class="toolbar-inner display-flex">
                     <a href="/index/" class="tab-link link active">
-                        <i class="mdi mdi-home"></i>
-                        <span>Link 1</span>
+                        <i class="ri-heart-pulse-line"></i>
+                        <span>Explore</span>
                     </a>
                     <a href="/link2/" class="tab-link link">
-                        <i class="mdi mdi-link"></i>
-                        <span>Link 2</span>
+                        <i class="ri-search-2-line"></i>
+                        <span>Busca</span>
                     </a>
                     <a href="/link3/" class="tab-link link">
-                        <i class="mdi mdi-account"></i>
-                        <span>Link 3</span>
+                        <i class="ri-calendar-event-fill"></i>
+                        <span>Agenda</span>
+                    </a>
+                    <a href="/link4/" class="tab-link link">
+                        <i class="ri-user-line"></i>
+                        <span>Perfil</span>
                     </a>
 
                 </div>
@@ -50,18 +56,48 @@
             <!-- Initial Page, "data-name" contains page name -->
             <div data-name="index" class="page color-theme-blue">
 
-                <!-- Top Navbar -->
-                <div class="navbar">
-                    <div class="navbar-bg"></div>
-                    <div class="navbar-inner justify-content-center">
-                        <div class="title ">Template Tab</div>
+                <!--Topo Nav-->
+                <div class="top-nav">
+                    <a href="index.html" class="title-logo">
+                        <img class="Logo-ps" src="img/Logo.svg" alt="Logo">
+                    </a>
+                    <div class="btn-group">
+                      <a href="#" class="btn-fav">
+                        <i class="ri-heart-line"></i>
+                      </a>
+                      <a href="#" class="btn-notify" data-count="0">
+                        <i class="ri-notification-2-line"></i>
+                      </a>
                     </div>
+
                 </div>
+
+
+                <form class="search-form">
+                    <input class="search-input" placeholder="O que você procura?" type="text">
+                    <i class="icone busca ri-search-2-line"></i>
+                </form>
+                  
 
                 <!-- Scrollable page content -->
                 <div class="page-content">
                     <div class="block">
-                        Conteúdo do link 1
+                         <!-- Swiper -->
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img class="img-fluid" src="img/anuncio_plano2.svg" alt="Anuncio">
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="img-fluid" src="img/anuncio_plano1.svg" alt="Anuncio">
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="img-fluid" src="img/anuncio_plano3.svg" alt="Anuncio">
+                            </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <!-- Swiper JS -->
                     </div>
                 </div>
             </div>
@@ -73,6 +109,7 @@
 	<script type="text/javascript" src="lib/jquery-3.7.0.min.js"></script>	
     <!-- Roteamento do app-->
     <script type="text/javascript" src="js/routes.js"></script>
+    <!-- Swiper JS -->
     <script src="cordova.js"></script>
 </body>
 

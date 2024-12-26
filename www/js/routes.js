@@ -30,12 +30,40 @@ var app = new Framework7({
 		},
 		pageInit: function (event, page) {
 		// fazer algo quando a página for inicializada
+    $.getScript('js/index.js');
+    
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        autoplay: true,
+        delay: 5000,
+        loop: true,
+        breakpoints: {
+          50:{
+            slidesPerView: 1,
+            spaceBetween: 30
+          },
+          640:{
+            slidesPerView: 2,
+            spaceBetween: 30
+          },
+          992:{
+            slidesPerView: 3,
+            spaceBetween: 30
+          },
+          1200:{
+            slidesPerView: 4,
+            spaceBetween: 30
+          },
+        }
+      });
 		},
 		pageBeforeRemove: function (event, page) {
 		// fazer algo antes da página ser removida do DOM
 		},
 	  }
     },
+
     {
       path: '/link2/',
       url: 'link2.html',
@@ -55,6 +83,7 @@ var app = new Framework7({
 		},
 	  }
     },
+
     {
       path: '/link3/',
       url: 'link3.html',
@@ -74,12 +103,32 @@ var app = new Framework7({
 		},
 	  }
     },
+
+    {
+      path: '/link4/',
+      url: 'link4.html',
+      animate: false,
+	  on: {
+		pageBeforeIn: function (event, page) {
+		// fazer algo antes da página ser exibida
+		},
+		pageAfterIn: function (event, page) {
+		// fazer algo depois da página ser exibida
+		},
+    pageInit: function (event, page) {
+      // Fazer algo quando a página for inicializada
+    },
+		pageBeforeRemove: function (event, page) {
+		// fazer algo antes da página ser removida do DOM
+		},
+	  }
+    },
   ],
   // ... other parameters
 });
 
 //Para testes direto no navegador
-//var mainView = app.views.create('.view-main', { url: '/index/' });
+var mainView = app.views.create('.view-main', { url: '/index/' });
 
 //EVENTO PARA SABER O ITEM DO MENU ATUAL
 app.on('routeChange', function (route) {
